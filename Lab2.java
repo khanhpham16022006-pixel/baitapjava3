@@ -7,18 +7,15 @@ import java.util.Scanner;
 public class Lab2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Input designer and power from the user
         System.out.print("Enter designer: ");
         String designerInput = scanner.nextLine();
 
         System.out.print("Enter power: ");
         int powerInput = scanner.nextInt();
 
-        // Create an Engine object using the parameterized constructor
         Engine engine = new Engine(designerInput, powerInput);
 
-        // Display the menu and allow the user to choose options
+       
         int choice;
         do {
             System.out.println("\n1. Test getDesigner()");
@@ -29,13 +26,13 @@ public class Lab2 {
 
             switch (choice) {
                 case 1:
-                    // Test getDesigner() method
+                    
                     System.out.println("OUTPUT:");
                     System.out.println(engine.getDesigner());
                     break;
 
                 case 2:
-                    // Test setPower() and getPower() methods
+                  
                     System.out.print("Enter new power: ");
                     int newPower = scanner.nextInt();
                     engine.setPower(newPower);
@@ -44,7 +41,7 @@ public class Lab2 {
                     break;
 
                 case 3:
-                    // Test toString() method
+                   
                     System.out.println("OUTPUT:");
                     System.out.println(engine.toString());
                     break;
@@ -56,4 +53,5 @@ public class Lab2 {
 
         scanner.close();
     }
+
 }
