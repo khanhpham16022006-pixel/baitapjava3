@@ -5,22 +5,30 @@ public class EngineTest {
     private String designer;
     private int power;
 
+       private String originalDesigner;
+    private int originalPower;
 
+ 
     public EngineTest() {
         this.designer = "";
         this.power = 0;
+        this.originalDesigner = "";
+        this.originalPower = 0;
     }
 
-    
+ 
     public EngineTest(String designer, int power) {
         this.designer = designer;
         this.power = power;
+        this.originalDesigner = designer;
+        this.originalPower = power;
     }
 
-    
+
     public String getDesigner() {
         String result = designer.length() > 3 ? designer.substring(0, 3) : designer;
         return result.substring(0, 1).toLowerCase() + result.substring(1);
+        
     }
 
    
@@ -28,32 +36,27 @@ public class EngineTest {
         return power;
     }
 
-   
+  
     public void setPower(int power) {
         this.power = power;
     }
 
- 
     @Override
     public String toString() {
-        return "Designer: " + getDesigner() + ", Power: " + getPower();
+        return originalDesigner + " " + originalPower;
     }
 
-    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-   
         System.out.print("Enter designer: ");
         String designerInput = scanner.nextLine();
 
         System.out.print("Enter power: ");
         int powerInput = scanner.nextInt();
 
-
         EngineTest engine = new EngineTest(designerInput, powerInput);
 
-        
         int choice;
         do {
             System.out.println("\n1. Test getDesigner()");
@@ -64,13 +67,11 @@ public class EngineTest {
 
             switch (choice) {
                 case 1:
-                
                     System.out.println("OUTPUT:");
                     System.out.println(engine.getDesigner());
                     break;
 
                 case 2:
-
                     System.out.print("Enter new power: ");
                     int newPower = scanner.nextInt();
                     engine.setPower(newPower);
@@ -79,7 +80,6 @@ public class EngineTest {
                     break;
 
                 case 3:
-                   
                     System.out.println("OUTPUT:");
                     System.out.println(engine.toString());
                     break;
